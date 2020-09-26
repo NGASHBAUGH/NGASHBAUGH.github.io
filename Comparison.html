@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+  </head>
+<body class="styling" style="background-color: lightgrey;" >  
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light p-0 my-0 found">
+    <a class="Tribbon"  href="Landing.html"><b>Latitude</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " style="background-color: white;" id="navbarNavDropdown">
+      <ul class="navbar-nav float-md-right pl-xs-2" >
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color: black" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" style="color: black" href="Max.html">Max Temperature</a>
+            <a class="dropdown-item" style="color: black" href="Humidity.html">Humidity</a>
+            <a class="dropdown-item" style="color: black" href="cloudiness.html">Cloudiness</a>
+            <a class="dropdown-item" style="color: black" href="WindSpeed.html">Wind Speed</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+        <a class="nav-link"  style="color: black" href="Comparison.html">Comparison <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" style="color: black" href="Data.html">Data</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col  mt-lg-5 " style="background-color: white;">
+          <h2 class="m-lg-5" style="color: lightseagreen;" ><b>Comparison: Latitude Vs X </b></h2>
+          <hr class="my-4">
+          <p class="m-lg-5" style="font-size: small;">  Click any plot to get an in-depth analysis.
+            <div class="container compPhoto">
+              <div class="row">
+                <div class="col-lg-6 col-xs-12 "><a href="Max.html"> Vs Max Tempurature <br> <img src="Resources\assets\images\Fig1.png"  class = "img-responsive center-block d-block mx-auto" /></div>
+                </a>
+                <div class="col-lg-6 col-xs-12"><a href="Humidity.html">  Humidity <br><img src="Resources\assets\images\Fig2.png" class = "img-responsive center-block d-block mx-auto" /></div>
+                </a>
+                <div class="w-100"></div>
+                </a>
+                <div class="col-lg-6 col-xs-12"><a href="cloudiness.html"> Vs Cloudiness <br><img src="Resources\assets\images\Fig3.png" class = "img-responsive center-block d-block mx-auto" /></div>
+                </a>
+                <div class="col-lg-6 col-xs-12"><a href="WindSpeed.html"> Vs Wind Speed <br><img src="Resources\assets\images\Fig4.png" class = "img-responsive center-block d-block mx-auto" /></div>
+            </div>
+          </div>
+        </p>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

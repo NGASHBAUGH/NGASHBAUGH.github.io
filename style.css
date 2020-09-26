@@ -1,0 +1,87 @@
+/* Build Width class for images  */
+
+/* 
+.bg-warning {       
+    @include media-breakpoint-up(sm) { 
+        background: lightseagreen;
+    }
+    @include media-breakpoint-up(md) { 
+        background: white;
+    }
+}
+
+} */
+
+@media only screen and (min-width: 600px) {
+    found {
+      background-color: white;
+      border-width: 0px;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+    .navbar-light.bg-light{
+       background-color: lightseagreen !important;
+       border: 0px;
+     }
+   }
+.image {
+    object-fit: fill;
+  }
+
+
+.Tribbon {
+    text-align: right;
+    font-size: 25px;
+    color: white;
+    background-color: lightseagreen;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+
+.box {
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+
+  }
+
+.box h1{
+    font-size: x-large;
+    color: lightseagreen;
+    font-weight: bold;
+}
+
+.box2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: white;
+    color: black;
+
+
+  }
+
+
+
+.box2 h1{
+    font-weight: bold;
+    font-size: x-large;
+    color: lightseagreen;
+}
+
+.styling {
+    background-color: lightgray;    
+}
+
+.compPhoto {
+    color: lightseagreen;
+}
+
+.compPhoto div {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
