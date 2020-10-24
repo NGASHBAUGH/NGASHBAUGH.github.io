@@ -1,5 +1,5 @@
+// this loads the list of availible IDs and places them in the dropdown in the HTML
 d3.json('samples.json').then(function(data) {
-    console.log(data.samples[0].sample_values)
     var sampleNames = data.names;
         d3.select('#selDataset').selectAll('option').data(sampleNames)
         .enter().append('option').html(function (m) {
@@ -8,24 +8,14 @@ d3.json('samples.json').then(function(data) {
 
 });
 
-
+// This function loads the correct data and creates the bar graph
 function reload(ID) {
-    console.log("This worked")
     d3.json('samples.json').then(function(dbar) {
-        console.log(dbar.samples)
-        console.log(ID)
-
         function barFilter (num) {return num.id == ID}
-
         var barResults = dbar.samples.filter(barFilter)
-        console.log(barResults)
-
         var values = barResults[0].sample_values
-        console.log(values)
         var idnames = barResults[0].otu_ids.map(function (i) {return `OTU ${i}`})
-        console.log(idnames)
         var label = barResults[0].otu_labels
-        console.log(label)
         trace = {
             y : idnames.slice(0, 10).reverse(), 
             x : values.slice(0, 10).reverse(), 
@@ -41,20 +31,19 @@ function reload(ID) {
         };
 
         Plotly.newPlot('bar' , barData , layout);
-
+                // Begins the bubble graph
             reloadBuble(ID , barResults , values , label)
-
+                // Triggers the Demographic info to load 
             reloadinfo(ID,dbar)
 
     })
 }
 
 
-
+// Tjis generates the bubble graph
 function reloadBuble(ID , bubbleResults , values , label ){
 
     var idNumber = bubbleResults[0].otu_ids
-    console.log(idNumber)
 
     var trace1 = {
         x : idNumber, 
@@ -64,7 +53,7 @@ function reloadBuble(ID , bubbleResults , values , label ){
         mode : 'markers',
         marker : {
             color: idNumber,
-            colorscale: [[0, 'rgb(200, 255, 200)'], [1, 'rgb(0, 100, 0)']], 
+            colorscale: [[0, 'rgb(0,0,255)'], [1, 'rgb(165,42,42)']], 
             cmin: d3.min(idNumber),
             cmax: d3.max(idNumber),
             size : values
@@ -76,31 +65,25 @@ function reloadBuble(ID , bubbleResults , values , label ){
 
     }
     Plotly.newPlot('bubble' , data1 , layout1)
-    
-}
+};
 
+// Generates the demographic info 
 function reloadinfo (ID , data){
 
     function barFilter (num) {return num.id == ID}
-
     var infoResults = data.metadata.filter(barFilter)
-    console.log(infoResults)
-
     var values = infoResults[0]
-    console.log(values)
-
     var ul = d3.select('#sample-metadata').html("")
     Object.entries(values).forEach( ([key,value]) => {
         ul.append('p').text(`${key}: ${value}`)
     })
 
 
-}
+};
 
-
+// Triggers the chain of reload functions
 function optionChanged () {
     id = d3.select('#selDataset').property('value');
-    console.log(id)
     reload(id)
     return id
-}
+};
